@@ -35,16 +35,17 @@ public class Character : MonoBehaviour {
         sr.flipX = !facingRight;
 
         if (Input.GetButtonDown("Jump")) {
-                onAir = true;
+            rb2d.velocity = Vector2.zero;
                 rb2d.AddForce(Vector2.up * jumpForce);
         }
+
+       
 
         anim.SetFloat("Speed", Mathf.Abs(move));
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        onAir = false;
-    }
+   
+
+
 }
